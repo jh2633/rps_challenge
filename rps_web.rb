@@ -10,14 +10,13 @@ class Rock_Paper_Scissor < Sinatra::Base
 
   post '/play' do
     joseph = Player.new(params[:player])
-    Game.new_game(joseph)
-    @game = Game.instance
+    @game = Game.new_game(joseph)
     erb(:play)
   end
 
   get '/result' do
     @game = Game.instance
-    # @game.player_move(params[:rock||:paper||:scissor])
+    @game.player_move(params[:RPS].to_i)
     @game.computer_move
     erb(:result)
   end

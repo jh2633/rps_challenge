@@ -20,11 +20,7 @@ subject(:player) {described_class.new("name")}
   it 'can use the move paper' do
     expect(player.paper).to eq 1
   end
-  #
-  # it 'can use of the moves at random' do
-  #   a = 0||1||2
-  #   expect(player.random).to eq(a)
-  # end
+ 
 
 
 
